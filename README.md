@@ -2,6 +2,8 @@
 
 **Diddy Simulator** is a chaotic and hilarious web game where you play as *Diddy*, catching babies and baby oil while avoiding falling police officers. Last as long as you can, and don’t forget — if you touch **Drake**, you gain temporary protection!
 
+[👉 Click here to play the game!](https://thethreatner.github.io/Diddy/)
+
 ## 🕹 Gameplay
 
 - 🧺 **Catch**: Babies and baby oil to increase your score.
