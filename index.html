@@ -147,7 +147,7 @@ button:hover {
   </style>
 </head>
 <body>
-  <canvas id="gameCanvas" width="1000" height="800"></canvas>
+  <canvas id="gameCanvas" width="800" height="800"></canvas>
   <button id="startButton">Start Game</button>
   <button id="restartButton">Restart</button>
   <div id="scoreDisplay">Score: 0</div>
@@ -176,7 +176,7 @@ button:hover {
     const drakeImg = new Image();
     drakeImg.src = 'https://raw.githubusercontent.com/TheThreatner/Diddy/refs/heads/main/drake.png';
 
-    const diddy = { x: 400, y: 550, width: 250, height: 250, speed: 7 };
+    const diddy = { x: 400, y: 550, width: 200, height: 200, speed: 7 };
     const objects = [];
     const keys = {};
     let score = 0;
@@ -187,19 +187,35 @@ button:hover {
     let invincible = false;
     let invincibleTimer = 0;
 
-    function spawnObject() {
-      const types = ['baby', 'oil', 'cop', 'drake'];
-      const type = types[Math.floor(Math.random() * types.length)];
-      const obj = {
-        type: type,
-        x: Math.random() * (canvas.width - 40),
-        y: -40,
-        width: 120,
-        height: 120,
-        speed: 3 + Math.random() * 2
-      };
-      objects.push(obj);
-    }
+   function spawnObject() {
+  // Rare Drake spawn (e.g., 5% chance per cycle)
+  if (Math.random() < 0.05) {
+    const obj = {
+      type: 'drake',
+      x: Math.random() * (canvas.width - 40),
+      y: -40,
+      width: 80,
+      height: 80,
+      speed: 3 + Math.random() * 2
+    };
+    objects.push(obj);
+    return;
+  }
+
+  // Regular spawn for other types
+  const types = ['baby', 'oil', 'cop']; // Drake removed here
+  const type = types[Math.floor(Math.random() * types.length)];
+  const obj = {
+    type: type,
+    x: Math.random() * (canvas.width - 40),
+    y: -40,
+    width: 80,
+    height: 80,
+    speed: 3 + Math.random() * 2
+  };
+  objects.push(obj);
+}
+
 
     function drawObject(obj) {
       let img;
