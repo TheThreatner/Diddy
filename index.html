@@ -147,7 +147,7 @@ button:hover {
   </style>
 </head>
 <body>
-  <canvas id="gameCanvas" width="800" height="800"></canvas>
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
   <button id="startButton">Start Game</button>
   <button id="restartButton">Restart</button>
   <div id="scoreDisplay">Score: 0</div>
@@ -176,7 +176,7 @@ button:hover {
     const drakeImg = new Image();
     drakeImg.src = 'https://raw.githubusercontent.com/TheThreatner/Diddy/refs/heads/main/drake.png';
 
-    const diddy = { x: 400, y: 550, width: 200, height: 200, speed: 7 };
+    const diddy = { x: 400, y: 550, width: 1500, height: 150, speed: 7 };
     const objects = [];
     const keys = {};
     let score = 0;
@@ -194,8 +194,8 @@ button:hover {
       type: 'drake',
       x: Math.random() * (canvas.width - 40),
       y: -40,
-      width: 80,
-      height: 80,
+      width: 70,
+      height: 70,
       speed: 3 + Math.random() * 2
     };
     objects.push(obj);
