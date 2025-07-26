@@ -7,6 +7,94 @@
   <title>Diddy Simulator</title>
   <style>
     body {
+      /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background: linear-gradient(135deg, #ffd89b, #19547b);
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* Title */
+h1 {
+  font-size: 2.5rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 2px 2px 0px #000;
+}
+
+/* Score Display */
+#score {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background-color: rgba(0,0,0,0.6);
+  border: 2px solid #fff;
+  border-radius: 8px;
+}
+
+/* Canvas */
+canvas {
+  border: 4px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  margin-bottom: 20px;
+  background-color: #111;
+}
+
+/* Buttons */
+button {
+  padding: 12px 24px;
+  font-size: 0.9rem;
+  font-family: 'Press Start 2P', cursive;
+  border: none;
+  border-radius: 6px;
+  background-color: #ff4c4c;
+  color: #fff;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-transform: uppercase;
+  box-shadow: 0 4px 0 #b30000;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background-color: #ff3333;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  canvas {
+    width: 90vw;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #score {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+  }
+}
+
       margin: 0;
       overflow: hidden;
       font-family: sans-serif;
